@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="790" viewBox="0 0 1280 790" role="img" aria-labelledby="title desc">
+  <title id="title">The 16 User Stories with Priorities and Story Points</title>
+  <desc id="desc">Four epics with four stories each. Story point values total 43, although the reference image says 52.</desc>
+  <defs>
+    <style>
+      .base{font-family:Inter,Arial,sans-serif;fill:#26334b}.title{font-size:27px;font-weight:750}.head{font-size:15px;font-weight:700}.cell{font-size:15px}.epic{font-size:16px;font-weight:750}.small{font-size:13px;fill:#59687d}.priority{font-size:14px;font-weight:650}.bold{font-weight:750}.id{font-size:14px;font-weight:600;fill:#496080}.total{font-size:16px;font-weight:750}
+    </style>
+  </defs>
+  <rect x="10" y="10" width="1260" height="770" rx="18" fill="#fff" stroke="#b7dafa" stroke-width="3"/>
+  <circle cx="48" cy="49" r="27" fill="#1375e8"/><text x="48" y="58" text-anchor="middle" fill="#fff" font-family="Arial" font-size="26" font-weight="700">4</text>
+  <text class="base title" x="88" y="59">The 16 User Stories (with Priorities &amp; Story Points)</text>
+  <rect x="22" y="87" width="1236" height="42" rx="5" fill="#e9f4ff"/>
+  <g class="base head"><text x="35" y="114">Epic</text><text x="274" y="114">ID</text><text x="365" y="114">User Story Title</text><text x="967" y="114">Priority</text><text x="1152" y="114">Story Points</text></g>
+  <g stroke="#ccdeef" stroke-width="1">
+    <rect x="22" y="129" width="1236" height="136" fill="#fff"/><rect x="22" y="265" width="1236" height="136" fill="#fff"/><rect x="22" y="401" width="1236" height="136" fill="#fff"/><rect x="22" y="537" width="1236" height="136" fill="#fff"/>
+    <path d="M250 87v586M340 87v586M940 87v586M1115 87v586"/><path d="M22 129h1236M22 163h1236M22 197h1236M22 231h1236M22 265h1236M22 299h1236M22 333h1236M22 367h1236M22 401h1236M22 435h1236M22 469h1236M22 503h1236M22 537h1236M22 571h1236M22 605h1236M22 639h1236M22 673h1236"/>
+  </g>
+  <g>
+    <rect x="22" y="129" width="228" height="136" fill="#f1e8ff"/><rect x="22" y="265" width="228" height="136" fill="#def1ff"/><rect x="22" y="401" width="228" height="136" fill="#e8f7df"/><rect x="22" y="537" width="228" height="136" fill="#fff0d9"/>
+  </g>
+  <g class="base epic"><text x="36" y="157" fill="#713ec5">1. Question</text><text x="52" y="179" fill="#713ec5">Management</text><text class="small" x="52" y="218">(4 stories)</text>
+    <text x="36" y="293" fill="#1976bf">2. Question</text><text x="52" y="315" fill="#1976bf">Review &amp; Publishing</text><text class="small" x="52" y="354">(4 stories)</text>
+    <text x="36" y="429" fill="#387c2a">3. Practice Quiz</text><text class="small" x="52" y="466">(4 stories)</text>
+    <text x="36" y="565" fill="#bd552f">4. Results &amp; History</text><text class="small" x="52" y="602">(4 stories)</text></g>
+  <g class="base id" text-anchor="middle">
+    <text x="295" y="153">US01</text><text x="295" y="187">US02</text><text x="295" y="221">US03</text><text x="295" y="255">US04</text>
+    <text x="295" y="289">US05</text><text x="295" y="323">US06</text><text x="295" y="357">US07</text><text x="295" y="391">US08</text>
+    <text x="295" y="425">US09</text><text x="295" y="459">US10</text><text x="295" y="493">US11</text><text x="295" y="527">US12</text>
+    <text x="295" y="561">US13</text><text x="295" y="595">US14</text><text x="295" y="629">US15</text><text x="295" y="663">US16</text>
+  </g>
+  <g class="base cell">
+    <text x="359" y="153">Create multiple-choice questions</text><text x="359" y="187">Add answer options and select correct answer</text><text x="359" y="221">Tag questions by course</text><text x="359" y="255">Tag questions by week</text>
+    <text x="359" y="289">View submitted questions</text><text x="359" y="323">Approve questions</text><text x="359" y="357">Reject questions with feedback</text><text x="359" y="391">Publish approved questions</text>
+    <text x="359" y="425">Select course and week</text><text x="359" y="459">Generate random 10-question quiz</text><text x="359" y="493">Answer questions</text><text x="359" y="527">Calculate quiz score</text>
+    <text x="359" y="561">View correct answers and explanations</text><text x="359" y="595">View previous attempts</text><text x="359" y="629">View history by topic</text><text x="359" y="663">Display score as percentage</text>
+  </g>
+  <g class="priority" text-anchor="middle">
+    <g fill="#e33135"><circle cx="970" cy="148" r="10"/><circle cx="970" cy="182" r="10"/><circle cx="970" cy="284" r="10"/><circle cx="970" cy="318" r="10"/><circle cx="970" cy="386" r="10"/><circle cx="970" cy="454" r="10"/><circle cx="970" cy="488" r="10"/><circle cx="970" cy="522" r="10"/></g>
+    <g fill="#ef741d"><circle cx="970" cy="216" r="10"/><circle cx="970" cy="250" r="10"/><circle cx="970" cy="352" r="10"/><circle cx="970" cy="420" r="10"/><circle cx="970" cy="556" r="10"/><circle cx="970" cy="590" r="10"/><circle cx="970" cy="658" r="10"/></g>
+    <circle cx="970" cy="624" r="10" fill="#ef741d"/>
+    <g fill="#fff" font-size="13" font-weight="800"><text x="970" y="153">↑</text><text x="970" y="187">↑</text><text x="970" y="289">↑</text><text x="970" y="323">↑</text><text x="970" y="391">↑</text><text x="970" y="459">↑</text><text x="970" y="493">↑</text><text x="970" y="527">↑</text></g>
+    <g class="base priority"><text x="1020" y="153">Highest</text><text x="1020" y="187">Highest</text><text x="1020" y="221">High</text><text x="1020" y="255">High</text><text x="1020" y="289">Highest</text><text x="1020" y="323">Highest</text><text x="1020" y="357">High</text><text x="1020" y="391">Highest</text><text x="1020" y="425">High</text><text x="1020" y="459">Highest</text><text x="1020" y="493">Highest</text><text x="1020" y="527">Highest</text><text x="1020" y="561">High</text><text x="1020" y="595">High</text><text x="1020" y="629">Medium</text><text x="1020" y="663">High</text></g>
+  </g>
+  <g class="base cell bold" text-anchor="middle"><text x="1165" y="153">3</text><text x="1165" y="187">2</text><text x="1165" y="221">2</text><text x="1165" y="255">2</text><text x="1165" y="289">2</text><text x="1165" y="323">2</text><text x="1165" y="357">3</text><text x="1165" y="391">2</text><text x="1165" y="425">3</text><text x="1165" y="459">5</text><text x="1165" y="493">3</text><text x="1165" y="527">3</text><text x="1165" y="561">3</text><text x="1165" y="595">3</text><text x="1165" y="629">3</text><text x="1165" y="663">2</text></g>
+  <rect x="22" y="673" width="1236" height="45" rx="0" fill="#f7fbff" stroke="#ccdeef"/>
+  <text class="base total" x="1070" y="702" text-anchor="end">Total Story Points</text><text class="base total" x="1165" y="702" text-anchor="middle" fill="#c45a2a">43</text>
+  <text class="base small" x="27" y="750">The reference image shows 52 in its footer; the 16 displayed row values sum to 43. See backlog.md for the calculation and note.</text>
+</svg>
