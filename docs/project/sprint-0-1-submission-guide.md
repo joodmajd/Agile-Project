@@ -39,7 +39,7 @@ The brief counts the PO and SM as developers too. Each of the four members needs
 
 ## Sprint 1 (Week 8): walking slice and CI
 
-**Suggested Sprint goal:** “Deliver one working, reviewed question-to-practice slice and run tests plus lint automatically on every pull request.” Confirm the team's actual goal, scope, and capacity in Jira.
+**Suggested Sprint goal:** “Deliver the question-authoring slice (create a question, add options and correct answer, and tag it by course/week), with automated tests and lint on every pull request.” Confirm the team's actual goal, scope, and capacity in Jira.
 
 ### Assign one story per member
 
@@ -47,12 +47,12 @@ At Sprint Planning, Seif selects and orders the actual Jira stories, Samira chec
 
 | Member | Suggested Sprint 1 area | What the PR must demonstrate |
 |---|---|---|
-| Joud | Question authoring/tagging (choose an actual US01–US04 Jira issue) | TA can enter a question and the required fields are validated/saved as a draft; include a test. |
-| Ahmed | Question review/publishing (choose an actual US05–US08 Jira issue) | Reviewer can change a question's state as specified; unpublished content stays out of student quizzes; include a state/key-rule test. |
-| Samira | Student topic/quiz flow (choose an actual US09–US11 Jira issue) | Student can select the topic or start the quiz behavior covered by the story; include a test. |
-| Seif | Scoring/results (choose an actual US12–US16 Jira issue) | Score/result matches the acceptance criteria; include a test. Seif still accepts/rejects stories as PO at review. |
+| Joud | US01 — create multiple-choice questions | TA can create and save a question draft; include a validation/test contribution. |
+| Ahmed | US02 — add answer options and select the correct answer | Question stores the options and exactly one correct answer; include a test. |
+| Samira | US03 or US04 — add course/week tagging | Tags are saved and usable to filter the question; include a test. Samira also logs stand-ups and removes blockers as SM. |
+| Seif | US01–US04 — pair on validation/integration and add a meaningful code/test contribution | Contribute implementation/tests to the authoring slice; Seif still orders the backlog and accepts/rejects stories as PO at review. |
 
-This split is a planning suggestion, not a claim that these people already completed these stories. Use the assignments and story keys that were actually agreed in your Jira Sprint. If a story is not ready or too large, split/refine it with the PO before coding.
+This suggested split matches the current Jira Sprint 1 scope (US01–US04); coordinate the fourth story, US04, with the team so one member is not overloaded. It is not a claim that the work is complete. If planning changes the scope, use the actual Jira issue keys and owners. If a story is not ready or too large, refine or split it with the PO before coding. The course brief requires meaningful code/test contributions from the PO and SM too.
 
 ### What to submit for Sprint 1
 

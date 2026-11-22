@@ -32,9 +32,9 @@ Use the IDs above as Jira issue summaries/labels (or map them to your existing i
 | Sprint | Suggested goal | Stories | Points from this table |
 |---|---|---|---:|
 | Sprint 0 (Week 7) | Set up team, vision, repo, Jira, Definition of Done, and initial backlog. | Planning/setup work | 0 story points |
-| Sprint 1 (Week 8) | Build the author-to-review workflow. | US01–US08 | 18 |
-| Sprint 2 (Week 9) | Deliver topic selection and quiz attempt flow. | US09–US12 | 14 |
-| Sprint 3 (Week 10) | Deliver useful results and history, then validate with users. | US13–US16 | 11 |
+| Sprint 1 (Week 8) | Build the question-authoring foundation. | US01–US04 | 9 |
+| Sprint 2 (Week 9) | Complete question review/publishing and start the student quiz flow. | US05–US10 | 17 |
+| Sprint 3 (Week 10) | Finish quiz answering, scoring, results, and history; validate the complete MVP with users. | US11–US16 | 17 |
 | Sprint 4 (Week 11) | Ship fixes and changes selected from real user feedback; release v1.0. | Reprioritized feedback issues | Re-estimate in Jira |
 
-These allocations total the row sum of 43 and are a planning suggestion, not evidence of completed work or accepted velocity.
+These allocations total the row sum of 43 and match the current Jira sprint assignments. They are a plan, not evidence of completed work or accepted velocity. Sprint 2 and Sprint 3 each total 17 points; revisit the selected scope against the team's actual capacity during sprint planning.
