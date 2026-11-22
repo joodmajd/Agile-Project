@@ -4,6 +4,8 @@ Use this as the team's working checklist. The named role assignments below come 
 
 ## Team and standing responsibilities
 
+**Jira team page:** [Practice Quiz Bank team](https://home.atlassian.com/o/d2990ccd-fd0b-4647-abe0-9a59207588a7/people/team/eba0286b-b957-470d-aa9b-5bccabf513d0?cloudId=d48e5e9d-71b6-411e-b58a-f8c9d4ba95fd). The team membership information here is based on the user-provided link and instruction. Use the actual Jira project/backlog or board URL on the course registration form if it differs from this team page.
+
 | Member | Role in Sprints 0–2 | What they own | Required contribution as a developer |
 |---|---|---|---|
 | **Seif Sobhy** | Product Owner | Product vision, ordered backlog, story acceptance criteria, sprint goal/value, acceptance or rejection of completed stories at reviews. | Own at least one implementation/test story, raise a reviewed PR, and test another member's change. |
@@ -28,7 +30,7 @@ The brief counts the PO and SM as developers too. Each of the four members needs
 ### Sprint 0 submission checklist
 
 - [ ] Official team registration form handed in (team of four; roles above; TA approval/signature/date; three ranked choices as required).
-- [ ] Shared GitHub repo and Jira project links are in the form; instructor and TA have access to both.
+- [ ] Shared GitHub repo and actual Jira project/board links are in the form; instructor and TA have access to both. The team page above may not be the project board URL.
 - [ ] One-paragraph product vision is committed at `docs/project/vision.md`.
 - [ ] Jira backlog contains at least 15 prioritized stories, each with story points and acceptance criteria. The repo has a 16-story version at `docs/project/backlog.md`; align it with Jira.
 - [ ] Team Definition of Done is agreed and committed at `docs/project/definition-of-done.md`.
@@ -76,4 +78,4 @@ This split is a planning suggestion, not a claim that these people already compl
 - The screenshot-aligned backlog lists 16 stories whose displayed points sum to **43**, although its reference image shows **52**. Compare against your actual Jira estimates and make the document/Jira consistent; don't silently change estimates.
 - The GitHub repository is public. Do not commit student IDs, private contact details, or confidential peer evaluations.
 - The current repo has the app, tests, CI workflow, and templates, but those files alone do not prove each member's work or that meetings/reviews happened. The visible repo history currently has the original README commit and one bulk project-add commit. Link the actual per-member PRs/meeting records if they exist; otherwise ask your TA how to handle missing historical evidence rather than fabricating it.
-- No Jira account/project URL was provided to Codex, so this guide does not claim to create or update your Jira board.
+- The Jira team page was provided, but it could not be opened in this session and no project/backlog URL or board contents were provided. This guide does not claim to inspect or update Jira issues, sprint dates, or membership beyond the team's stated assumption.

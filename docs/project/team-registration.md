@@ -17,7 +17,8 @@ The brief's registration sheet is mandatory and needs actual group information a
 - Project choice 2: `[rank a genuine second choice]`
 - Project choice 3: `[rank a genuine third choice]`
 - GitHub repository: `[URL after creation]`
-- Jira project: `[URL after creation]`
+- Jira project/board URL (use the actual backlog or board link, not only the team page): `[URL]`
+- Jira team page supplied by the team: [Practice Quiz Bank team](https://home.atlassian.com/o/d2990ccd-fd0b-4647-abe0-9a59207588a7/people/team/eba0286b-b957-470d-aa9b-5bccabf513d0?cloudId=d48e5e9d-71b6-411e-b58a-f8c9d4ba95fd)
 - TA-approved idea #: `[TA confirms]`
 - TA signature / date: `[TA completes]`
 - Week 10 role rotation (PO / SM): `[two new, distinct members; record date]`
