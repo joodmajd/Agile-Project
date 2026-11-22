@@ -47,4 +47,4 @@ docs/project/                Vision, backlog, DoD, sprint records, feedback, dem
 
 ## Team project checklist
 
-See `docs/project/feedback-to-team.md` and `docs/project/sprint-plan.md`. The repository includes templates and the screenshot-aligned 16-story backlog. Keep the real GitHub/Jira records, user feedback, role rotation, sprint notes, and peer evaluation consistent with the work your team has completed; templates should be replaced with your actual evidence before hand-in.
+See `docs/project/sprint-0-1-submission-guide.md` for the named team responsibilities and Sprint 0/1 hand-in checklist. The repository also includes the vision, DoD, screenshot-aligned 16-story backlog, sprint/retro templates, and feedback log. Replace templates with actual evidence before hand-in.

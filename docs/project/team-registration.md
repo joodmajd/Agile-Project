@@ -7,10 +7,10 @@ The brief's registration sheet is mandatory and needs actual group information a
 
 | # | Full name | Student ID | Role in Sprints 0–2 | GitHub username |
 |---:|---|---|---|---|
-| 1 | `[member]` | `[member fills privately]` | Product Owner | `[username]` |
-| 2 | `[member]` | `[member fills privately]` | Scrum Master | `[username]` |
-| 3 | `[member]` | `[member fills privately]` | Developer | `[username]` |
-| 4 | `[member]` | `[member fills privately]` | Developer | `[username]` |
+| 1 | Seif Sobhy | `[member fills privately]` | Product Owner | `[username]` |
+| 2 | Samira Ayman | `[member fills privately]` | Scrum Master | `[username]` |
+| 3 | Joud Mouzad | `[member fills privately]` | Developer | `[username]` |
+| 4 | Ahmed Hazem | `[member fills privately]` | Developer | `[username]` |
 | 5 | `[if applicable]` | `[member fills privately]` | `[developer + CI/test or stretch epic if team of 5]` | `[username]` |
 
 - Project choice 1: Practice Quiz Bank (idea #5)

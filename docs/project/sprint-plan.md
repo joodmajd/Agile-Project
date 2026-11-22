@@ -15,8 +15,8 @@ Sprint 0 is the Week 7 setup sprint; Sprints 1–4 are one-week delivery sprints
 
 | Sprint range | Product Owner | Scrum Master | Rotation confirmation |
 |---|---|---|---|
-| Sprint 0–2 | `[member]` | `[different member]` | Initial assignment |
-| Sprint 3–4 | `[different member]` | `[different member]` | Changed at start of Sprint 3 on `[date]` |
+| Sprint 0–2 | Seif Sobhy | Samira Ayman | Initial assignment (team-provided) |
+| Sprint 3–4 | `[Joud Mouzad or Ahmed Hazem]` | `[the other developer]` | Confirm two new, distinct role holders at Sprint 3 start on `[date]` |
 
 ## Sprint 0 checklist (Week 7)
 
