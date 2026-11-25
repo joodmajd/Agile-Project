@@ -1,0 +1,94 @@
+WEEK 5 REFACTORING - AFTER-REFACTORING EVIDENCE
+Environment: Python 3.14.6; Ruff 0.17.6; Pylint 4.1.4; pytest 9.2.0; pytest-cov 7.1.0
+The exact week5/legacy_fees.py baseline is excluded from the clean whole-project Ruff run; its full unfiltered output is in before.txt.
+The final complexity probe intentionally uses a threshold of 1 to reveal function scores; its nonzero exit reports the expected C901 findings.
+
+$ python -m ruff check .
+All checks passed!
+[exit code: 0]
+
+$ python -m pylint week5/fees.py
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+[exit code: 0]
+
+$ python -m pytest -q
+...........................                                              [100%]
+27 passed in 0.03s
+[exit code: 0]
+
+$ python -m pytest --cov=grades --cov-report=term-missing week5/test_grades.py
+============================= test session starts =============================
+platform win32 -- Python 3.14.6, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\Administrator\Documents\Codex\2026-11-16\we-x20\outputs\Week5-Refactoring-Assignment
+configfile: pyproject.toml
+plugins: cov-7.1.0, typeguard-4.6.0
+collected 12 items
+
+week5\test_grades.py ............                                        [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.14.6-final-0 _______________
+
+Name              Stmts   Miss  Cover   Missing
+-----------------------------------------------
+week5\grades.py      10      0   100%
+-----------------------------------------------
+TOTAL                10      0   100%
+============================= 12 passed in 0.06s ==============================
+[exit code: 0]
+
+$ python -m pytest --cov=fees --cov-report=term-missing
+============================= test session starts =============================
+platform win32 -- Python 3.14.6, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\Administrator\Documents\Codex\2026-11-16\we-x20\outputs\Week5-Refactoring-Assignment
+configfile: pyproject.toml
+testpaths: week5
+plugins: cov-7.1.0, typeguard-4.6.0
+collected 27 items
+
+week5\test_fees.py ...........                                           [ 40%]
+week5\test_grades.py ............                                        [ 85%]
+week5\test_legacy_characterization.py ....                               [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.14.6-final-0 _______________
+
+Name            Stmts   Miss  Cover   Missing
+---------------------------------------------
+week5\fees.py      47      0   100%
+---------------------------------------------
+TOTAL              47      0   100%
+============================= 27 passed in 0.08s ==============================
+[exit code: 0]
+
+$ python -m ruff check --select C901 --config lint.mccabe.max-complexity=1 week5/fees.py
+C901 `tuition_fee` is too complex (4 > 1)
+  --> week5\fees.py:53:5
+   |
+53 | def tuition_fee(
+   |     ^^^^^^^^^^^
+54 |     courses: list[Course],
+55 |     student_type: StudentType | int,
+   |
+
+C901 `report` is too complex (2 > 1)
+  --> week5\fees.py:73:5
+   |
+73 | def report(
+   |     ^^^^^^
+74 |     courses: list[Course],
+75 |     student_type: StudentType | int,
+   |
+
+C901 `process_all` is too complex (2 > 1)
+  --> week5\fees.py:88:5
+   |
+88 | def process_all(students: list[StudentRecord]) -> dict[str, float]:
+   |     ^^^^^^^^^^^
+89 |     """Calculate a fee for each student category, including scholarships."""
+90 |     fees: dict[str, float] = {}
+   |
+
+Found 3 errors.
+[exit code: 1]

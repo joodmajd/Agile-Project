@@ -13,5 +13,5 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -r requirements-dev.txt
       - run: ruff check .
-      - run: pylint app.py server.py quiz_bank tests
+      - run: pylint app.py server.py quiz_bank tests week5/fees.py
       - run: pytest

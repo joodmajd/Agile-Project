@@ -32,6 +32,10 @@ pylint app.py server.py quiz_bank
 
 `tests/test_domain.py` covers question selection, review, validation, and scoring. `tests/test_app.py` covers HTTP flows and saved history. `tests/test_bdd_scenarios.py` runs the five acceptance scenarios documented in `features/practice_quiz.feature`.
 
+## Week 5 refactoring assignment
+
+The course Kata source, tests, baseline reports, findings, comparison, and project-story scenarios are under `week5/` and `docs/week5/`. Run the full repository checks from this folder with the commands above. The fee-specific Pylint check is `python -m pylint week5/fees.py`. Complete the pair-programming reflection in `docs/week5/after.md` using your team's real session details.
+
 ## Docker
 
 ```sh
@@ -52,6 +56,8 @@ tests/                      Unit, route, and acceptance tests
 features/                   Gherkin scenarios and their pytest mapping
 docs/project/               Vision, backlog, DoD, sprint records, and demo
 docs/refactoring-assignment/ Refactoring comparison and reports
+week5/                      Letter-grade kata and refactored fee kata
+docs/week5/                 Before/after reports and hidden-bug findings
 ```
 
 The app stores demo attempts in SQLite. Production use would require real authentication and authorization, deployment security, user-data handling rules, backups, and a privacy review.

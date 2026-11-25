@@ -1,6 +1,6 @@
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["."]
+testpaths = ["tests", "week5"]
+pythonpath = [".", "week5"]
 
 [tool.ruff]
 line-length = 88
@@ -8,6 +8,9 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"week5/legacy_fees.py" = ["ALL"]
 
 [tool.pylint.main]
 py-version = "3.12"
