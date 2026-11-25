@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f8fc">
+    <title>{% block title %}Practice Quiz Bank{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body data-role="{{ role }}">
+    <header class="top">
+      <a class="brand" href="{{ url_for('quiz_bank.index') }}">
+        <span class="brand-mark">Q</span>
+        <span>Practice Quiz Bank<small>ECU · SET 312 demo</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="pill">{{ published_count }} published questions</span>
+        <form action="{{ url_for('quiz_bank.change_role') }}" method="post" class="role-form">
+          <label for="role">Demo role</label>
+          <select id="role" name="role">
+            <option value="student" {% if role == 'student' %}selected{% endif %}>Student</option>
+            <option value="ta" {% if role == 'ta' %}selected{% endif %}>Question author (TA)</option>
+            <option value="instructor" {% if role == 'instructor' %}selected{% endif %}>Reviewer (instructor)</option>
+          </select>
+          <button class="small-button" type="submit">Switch</button>
+        </form>
+        <form action="{{ url_for('quiz_bank.reset_demo') }}" method="post">
+          <button class="icon-button" type="submit">Reset demo</button>
+        </form>
+      </div>
+    </header>
+    <main id="top">
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+        <div class="message {{ category }}" role="status">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <span>Practice Quiz Bank · SET 312 Agile Software Engineering</span>
+      <span>Coursework demo · invented data only</span>
+    </footer>
+  </body>
+</html>

@@ -1,8 +1,11 @@
-FROM node:22-alpine
+FROM python:3.12-slim
 WORKDIR /app
-COPY package*.json ./
-COPY src ./src
-COPY server.js ./server.js
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY app.py server.py ./
+COPY quiz_bank ./quiz_bank
+COPY templates ./templates
+COPY static ./static
 ENV PORT=4173
 EXPOSE 4173
-CMD ["node", "server.js"]
+CMD ["python", "server.py"]

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Practice quiz · {{ quiz.course }} Week {{ quiz.week }}{% endblock %}
+{% block content %}
+<section id="practice" class="section quiz-panel">
+  <div class="section-head"><div><div class="eyebrow">YOUR PRACTICE QUIZ</div>
+    <h2>{{ quiz.course }} · Week {{ quiz.week }}</h2></div><span class="tag">{{ quiz.questions|length }} QUESTIONS</span></div>
+  <form action="{{ url_for('quiz_bank.submit_quiz') }}" method="post">
+    {% for question in quiz.questions %}
+      <fieldset><legend>{{ loop.index }}. {{ question.prompt }}</legend>
+        {% for option in question.options %}
+          <label class="option"><input type="radio" name="{{ question.id }}" value="{{ loop.index0 }}" required> {{ option }}</label>
+        {% endfor %}
+      </fieldset>
+    {% endfor %}
+    <button class="wide" type="submit">Submit answers <span>→</span></button>
+  </form>
+</section>
+{% endblock %}

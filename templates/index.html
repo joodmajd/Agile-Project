@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div>
+    <div class="eyebrow">STUDY WITH PURPOSE</div>
+    <h1>Practice, understand,<br><span>improve.</span></h1>
+    <p>Build confidence with reviewed questions, clear explanations, and a record of your progress.</p>
+    <a class="primary-link" href="#practice">Start practicing <span>↓</span></a>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+    <div class="spark s1">✦</div><div class="spark s2">✳</div>
+    <div class="sample-card">
+      <div class="mini-top"><span>SET312</span><span>WEEK 06</span></div>
+      <div class="mini-line"></div><div class="mini-line short"></div>
+      <div class="mini-choice selected">✓ &nbsp; Test one behavior</div>
+      <div class="mini-choice">○ &nbsp; Ship all features</div>
+      <div class="mini-footer">Question 04 <span>● ● ● ◐ ○</span></div>
+    </div><div class="float-dot"></div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><b>{{ quiz_size }}</b><span>questions per quiz</span></div><i></i>
+  <div><b>100%</b><span>reviewed before publishing</span></div><i></i>
+  <div><b>∞</b><span>ways to practice</span></div>
+</section>
+
+{% if role == 'student' %}
+<section id="practice" class="section">
+  <div class="section-head">
+    <div><div class="eyebrow">YOUR NEXT STUDY SESSION</div><h2>Choose a topic</h2></div>
+    <p>Each quiz uses a fresh random set of published questions without repeats.</p>
+  </div>
+  <div class="practice-layout">
+    <div class="form-card">
+      <div class="card-icon">✎</div><h3>Build a practice quiz</h3>
+      <p>Choose a course and week. Your score and explanations appear after submission.</p>
+      <form action="{{ url_for('quiz_bank.start_quiz') }}" method="post">
+        <div class="form-grid">
+          <label>Course code<input name="course" value="SET312" maxlength="24" required></label>
+          <label>Week<input name="week" type="number" min="1" max="20" value="6" required></label>
+        </div>
+        <button class="wide" type="submit">Create my {{ quiz_size }}-question quiz <span>→</span></button>
+      </form>
+      <small class="privacy">Demo data is invented and progress is kept per browser session.</small>
+    </div>
+    <div class="topic-card">
+      <div class="topic-top"><span class="topic-icon">✳</span><span class="tag">FEATURED TOPIC</span></div>
+      <h3>Testing &amp; BDD</h3><p>Practice TDD, Gherkin, acceptance criteria, and CI.</p>
+      <div class="topic-meta"><span>SET312</span><span>Week 06</span><span>12 questions</span></div>
+      <div class="topic-progress"><i></i></div><small>Curated for your course</small>
+    </div>
+  </div>
+  {% if result %}
+  <div class="quiz-panel result-panel">
+    <div class="section-head"><div><div class="eyebrow">QUIZ COMPLETE</div>
+      <h2>{{ result.course }} · Week {{ result.week }}</h2></div>
+      <span class="tag">{{ result.correct }}/{{ result.total }} · {{ result.percent }}%</span>
+    </div>
+    {% for detail in result.details %}
+      <article class="explanation {% if detail.answer == detail.correct_answer %}right{% else %}wrong{% endif %}">
+        <b>{{ loop.index }}. {{ detail.prompt }}</b><br>
+        {% if detail.answer == detail.correct_answer %}Correct{% else %}Review this answer{% endif %}
+        <small>Correct answer: {{ detail.correct_option }}. {{ detail.explanation }}</small>
+      </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+<section class="section two-columns">
+  <div>
+    <div class="section-head compact"><div><div class="eyebrow">YOUR LEARNING</div><h2>Recent attempts</h2></div></div>
+    <div class="stack">
+      {% for attempt in history %}
+        <article class="history-card"><b>{{ attempt.course }} · Week {{ attempt.week }}</b>
+          <span>{{ attempt.correct }}/{{ attempt.total }} · {{ attempt.percent }}%</span>
+          <small>{{ attempt.at }}</small></article>
+      {% else %}<p class="empty">Completed quizzes will appear here.</p>{% endfor %}
+    </div>
+  </div>
+  <div class="topic-card learning-note"><div class="eyebrow">LEARNING TIP</div>
+    <h3>Use the explanations</h3><p>Review the reason behind each correct answer, then try another topic to strengthen your understanding.</p>
+  </div>
+</section>
+{% endif %}
+
+{% if role == 'ta' %}
+<section id="authoring" class="section workflow">
+  <div class="section-head"><div><div class="eyebrow">TRUSTED CONTENT</div><h2>Write a question</h2></div></div>
+  <p>Questions stay private as drafts until an instructor reviews and publishes them.</p>
+  <form action="{{ url_for('quiz_bank.add_question') }}" method="post">
+    <label>Question<textarea name="prompt" required maxlength="300" placeholder="Write a multiple-choice question"></textarea></label>
+    <div class="form-grid"><label>Course<input name="course" value="SET312" required></label>
+      <label>Week<input name="week" type="number" min="1" max="20" value="6" required></label></div>
+    <div class="options-grid">
+      <label>Option A<input name="a" required></label><label>Option B<input name="b" required></label>
+      <label>Option C<input name="c" required></label><label>Option D<input name="d" required></label>
+    </div>
+    <div class="form-grid"><label>Correct answer<select name="answer">
+      <option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option>
+    </select></label><label>Explanation<input name="explanation" required maxlength="300"></label></div>
+    <button class="secondary-button" type="submit">Save draft for review</button>
+  </form>
+</section>
+{% endif %}
+
+{% if role == 'instructor' %}
+<section id="authoring" class="section workflow">
+  <div class="section-head"><div><div class="eyebrow">CONTENT REVIEW</div><h2>Review questions</h2></div>
+    <span class="count-badge">{{ review_count }}</span></div>
+  <p>Approve questions before publishing them. Rejections must include feedback.</p>
+  <div class="stack review-list">
+    {% for question in review_questions %}
+      <article class="review-card">
+        <div class="review-heading"><span class="tag">{{ question.course }} · Week {{ question.week }}</span><span class="status {{ question.status }}">{{ question.status }}</span></div>
+        <h3>{{ question.prompt }}</h3>
+        <p>{% for option in question.options %}{{ loop.index }}. {{ option }}<br>{% endfor %}</p>
+        <p><b>Answer:</b> {{ question.options[question.answer] }}<br><b>Explanation:</b> {{ question.explanation }}</p>
+        <div class="review-actions">
+          {% if question.status == 'draft' %}
+          <form action="{{ url_for('quiz_bank.review', question_id=question.id) }}" method="post"><input type="hidden" name="decision" value="approve"><button type="submit">Approve</button></form>
+          {% else %}
+          <form action="{{ url_for('quiz_bank.review', question_id=question.id) }}" method="post"><input type="hidden" name="decision" value="publish"><button type="submit">Publish question</button></form>
+          {% endif %}
+          <form action="{{ url_for('quiz_bank.review', question_id=question.id) }}" method="post">
+            <input type="hidden" name="decision" value="reject"><label>Rejection feedback<input name="note" placeholder="Required if rejecting" required></label>
+            <button class="secondary-button" type="submit">Reject with feedback</button>
+          </form>
+        </div>
+      </article>
+    {% else %}<p class="empty">No questions are waiting for review.</p>{% endfor %}
+  </div>
+  <h3>Previously rejected</h3>
+  <div class="stack review-list">
+    {% for question in rejected_questions %}
+      <article class="history-card"><b>{{ question.prompt }}</b><span>{{ question.course }} · Week {{ question.week }}</span>
+        <small><b>Feedback to author:</b> {{ question.review_note }}</small></article>
+    {% else %}<p class="empty">No rejected questions.</p>{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="callout"><span>✦</span><div><b>Small steps add up.</b>
+  <p>Review each explanation and practice again to strengthen your understanding.</p></div>
+  <a href="#top">Back to top ↑</a></section>
+{% endblock %}
