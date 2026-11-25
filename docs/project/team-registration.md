@@ -9,14 +9,14 @@ The brief's registration sheet is mandatory and needs actual group information a
 |---:|---|---|---|---|
 | 1 | Seif Sobhy | `[member fills privately]` | Product Owner | `[username]` |
 | 2 | Samira Ayman | `[member fills privately]` | Scrum Master | `[username]` |
-| 3 | Joud Mouzad | `[member fills privately]` | Developer | `[username]` |
+| 3 | Joud Mouzad | `[member fills privately]` | Developer | `joodmajd` |
 | 4 | Ahmed Hazem | `[member fills privately]` | Developer | `[username]` |
 | 5 | `[if applicable]` | `[member fills privately]` | `[developer + CI/test or stretch epic if team of 5]` | `[username]` |
 
 - Project choice 1: Practice Quiz Bank (idea #5)
 - Project choice 2: `[rank a genuine second choice]`
 - Project choice 3: `[rank a genuine third choice]`
-- GitHub repository: `[URL after creation]`
+- GitHub repository: `https://github.com/joodmajd/Agile-Project`
 - Jira project/board URL (use the actual backlog or board link, not only the team page): `[URL]`
 - Jira team page supplied by the team: [Practice Quiz Bank team](https://home.atlassian.com/o/d2990ccd-fd0b-4647-abe0-9a59207588a7/people/team/eba0286b-b957-470d-aa9b-5bccabf513d0?cloudId=d48e5e9d-71b6-411e-b58a-f8c9d4ba95fd)
 - TA-approved idea #: `[TA confirms]`

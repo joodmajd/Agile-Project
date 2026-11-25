@@ -4,6 +4,7 @@ import re
 
 
 def test_draft_questions_are_not_available_to_students(client):
+    """Only published questions appear in generated student quizzes."""
     client.post("/quiz/start", data={"course": "SET312", "week": "6"})
     response = client.get("/quiz")
 
@@ -12,6 +13,7 @@ def test_draft_questions_are_not_available_to_students(client):
 
 
 def test_reviewer_approves_and_publishes_a_draft_question(client, app):
+    """Instructor can approve and publish a draft question."""
     repository = app.extensions["quiz_repository"]
     draft = next(
         question
@@ -27,6 +29,7 @@ def test_reviewer_approves_and_publishes_a_draft_question(client, app):
 
 
 def test_student_receives_ten_random_questions_without_repeats(client):
+    """Each quiz contains 10 distinct questions."""
     client.post("/quiz/start", data={"course": "SET312", "week": "6"})
     response = client.get("/quiz")
 
@@ -36,6 +39,7 @@ def test_student_receives_ten_random_questions_without_repeats(client):
 
 
 def test_student_receives_score_and_explanations(client):
+    """Submitted quiz displays percentage score and answer explanations."""
     client.post("/quiz/start", data={"course": "SET312", "week": "6"})
     with client.session_transaction() as browser_session:
         quiz_id = browser_session["active_quiz_id"]
@@ -52,6 +56,7 @@ def test_student_receives_score_and_explanations(client):
 
 
 def test_completed_quiz_is_saved_with_its_topic(client, app):
+    """Completed quiz attempt stores the selected course and week."""
     client.post("/quiz/start", data={"course": "SET312", "week": "6"})
     with client.session_transaction() as browser_session:
         quiz_id = browser_session["active_quiz_id"]

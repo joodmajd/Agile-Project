@@ -2,6 +2,7 @@
 
 
 def test_role_pages_and_role_protection(client):
+    """Unauthorised roles cannot post questions until switching to TA."""
     response = client.post("/questions", data={"prompt": "Should not save"})
     assert response.status_code == 302
     assert b"Switch to the Question author" in client.get("/").data
@@ -11,6 +12,7 @@ def test_role_pages_and_role_protection(client):
 
 
 def test_question_is_saved_as_draft_then_approved_and_published(client, app):
+    """TA creates a draft question that an instructor approves and publishes."""
     client.post("/role", data={"role": "ta"})
     client.post(
         "/questions",
@@ -42,6 +44,7 @@ def test_question_is_saved_as_draft_then_approved_and_published(client, app):
 
 
 def test_quiz_requires_all_answers_and_records_the_original_topic(client, app):
+    """Incomplete submissions redirect back and completed quizzes record topic."""
     client.post("/quiz/start", data={"course": "SET312", "week": "6"})
     quiz_page = client.get("/quiz")
     assert quiz_page.status_code == 200
@@ -74,6 +77,7 @@ def _visitor_id(client):
 
 
 def test_unavailable_topic_shows_a_clear_error(client):
+    """Starting a quiz on a topic with < 10 published questions shows an error."""
     response = client.post(
         "/quiz/start", data={"course": "SET999", "week": "2"}, follow_redirects=True
     )
