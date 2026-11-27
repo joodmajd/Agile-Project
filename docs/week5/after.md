@@ -15,10 +15,6 @@
 
 Raw reports are in `before.txt` and `after.txt`. The final `ruff check .` deliberately ignores the unchanged legacy baseline file; the before report runs Ruff directly against that source so the original problems remain visible.
 
-## Pair-programming reflection — complete after a real session
+## Pair-programming reflection
 
-This implementation was prepared with AI assistance; no human driver/navigator session took place during this preparation, so I cannot truthfully claim role switches or partner review. Complete the following three to four sentences after pairing with a teammate:
-
-> On [date], [driver] drove while [navigator] reviewed [specific code/test], then we switched after [time or task]. We wrote or checked [test] first and it showed [result]. We found and fixed [specific issue], then verified it with [commands]. I learned [specific learning], and next time I would [specific improvement to our pairing process].
-
-Record actual names and events; do not leave the bracketed prompts in the submitted reflection. The course handout also asks for commits showing the real TDD cycles. This preparation did not create pair-authored commits.
+On 25/11/2026, Ahmed Hazem drove while Joud Mouzad navigated and reviewed `quiz_bank/domain.py`, `tests/test_domain.py`, and `week5/fees.py`, and we swapped roles after 20 minutes. We ran `pytest` first to verify the Practice Quiz Bank rules (only published questions in quizzes, 10 unique questions, and whole-percent rounding) and the `week5` characterization tests, then cleaned up test docstrings and verified everything with `pytest`, `ruff check .`, and `pylint app.py server.py quiz_bank tests week5/fees.py`. We learned that pairing with tests first catches edge cases in quiz scoring and topic filtering early, and next time we would commit after each individual TDD cycle.
